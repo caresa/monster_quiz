@@ -42,3 +42,13 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 gem 'rspec-rails'
 #pry
 gem 'pry-byebug'
+#foundation
+gem 'foundation-rails'
+#active record
+gem 'activerecord', '~> 4.1.4'
+
+gem 'active_record_tasks', '~> 1.1.0'
+
+gem 'hirb'
+
+
