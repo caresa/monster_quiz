@@ -1,5 +1,27 @@
 Rails.application.routes.draw do
+  devise_for :users
+
+  get 'options/index'
+
+  get 'options/show'
+
+  resources :quizzes
+
+  resources :questions
+
+  resources :results
+
+
+  resources :quizzes do
+     resources :questions
+  end
+
+  resources :questions do
+    resources :options
+  end
+
   root :to => 'home#index'
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

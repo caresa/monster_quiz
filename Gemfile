@@ -53,4 +53,6 @@ gem 'hirb'
 
 gem 'underscore-rails'
 
+gem 'devise'
+
 
