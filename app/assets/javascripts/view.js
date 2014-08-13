@@ -1,37 +1,79 @@
 $(function() {
 
   var monsterQuiz = new MonsterQuiz();
-  getQuizzes(monsterQuiz.showQuizList);
-
 
 });
 
 // Zombie
-var MonsterQuiz = function () {
+function MonsterQuiz () {
   this.init();
 }
 MonsterQuiz.prototype = {
-  quizList: null,
+  quizList: [],
   quizSelected: null,
-  optionsSelected: [],
+  questionSelected: null,
+  questionList: [],
+  selectedOptions: [],
   init: function (quizzes) {
     var self = this;
 
+    this.getQuizzes();
+
     $('body').on('click', '.quizDiv', function () {
-      getQuizQuestions($(this).attr('value'), self.showQuiz);
+      self.getQuizQuestions($(this).attr('value'));
+
     });
   },
-  showQuizList: function (quizList) {
-    self.quizList = quizList;
-    console.log(quizList);
-
-    // for(var i in self.quizList) {
-    //   $('body').append('<div class="quizDiv" value="'+self.quizList[i].id+'">'+self.quizList[i].label+'</div>');
-    // }
+  getQuizzes: function (callback) {
+    var self = this;
+    $.ajax({
+      url:'/quizzes',
+      success: function(data){
+        for(var i in data) {
+          self.quizList.push(new Quiz(data[i]));
+        }
+        self.showQuizList();
+      }
+    });
   },
-  showQuiz: function (quizId, questionObjects) {
-    this.quizSelected = quizId;
-    console.log(quizId, questionObjects);
+  getQuizQuestions: function (quizId) {
+    var self = this;
+    this.quizId = quizId;
+    $.ajax({
+      //when i make the ajax call shouldn't it go to this view
+      url:'/quizzes/'+quizId+'/questions',
+      success: function(data){
+        for(var i in data) {
+          self.questionList.push(new Question(data[i]));
+        }
+        self.startQuiz();
+      }
+    });
+  },
+  showQuizList: function () {
+    for(var i in this.quizList) {
+     $('body').append('<div class="quizDiv" value="'+this.quizList[i].id+'">'+this.quizList[i].label+'</div>');
+    }
+  },
+  startQuiz: function () {
+    this.questionSelected = 0;
+    console.log(this);
+    this.showQuestion();
+  },
+  showQuestion: function () {
+    var q = this.questionList[this.questionSelected];
+    console.log(q);
+    $('body').append('<div>'+q.question+'</div>');
+    for(var i in q.options) {
+      $('body').append('<div>'+q.options[i].option+'</div>');
+    }
+  },
+  saveSelection: function(){
+
+  },
+  nextQuestion: function () {
+    this.questionSelected ++;
+    this.showQuestion();
   }
 };
 
@@ -95,29 +137,3 @@ Option.prototype = {
 //       $
 //   }
 // }
-
-function getQuizzes (callback) {
-  $.ajax({
-    url:'/quizzes',
-    success: function(data){
-      var quizObjects = [];
-      for(var i in data) {
-        quizObjects.push(new Quiz(data[i]));
-      }
-      callback(quizObjects);
-    }
-  });
-}
-
-function getQuizQuestions (quizId, callback) {
-  $.ajax({
-    url:'/quizzes/'+quizId+'/questions',
-    success: function(data){
-      var questionObjects = [];
-      for(var i in data) {
-        questionObjects.push(new Question(data[i]));
-      }
-      callback(quizId, questionObjects);
-    }
-  });
-}

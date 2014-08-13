@@ -78,7 +78,7 @@ Quiz.create([
   }
   ])
 
-Options.create([
+Option.create([
   {
     question_id: 1,
     label: "Most of my food purchase involve a speakerpost, my car, and a greasy paper bag."
