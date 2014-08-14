@@ -28,6 +28,7 @@ MonsterQuiz.prototype = {
     // event for save and contintue that calls saveAnswer
   },
   getQuizzes: function (callback) {
+    console.log('a');
     var self = this;
     $.ajax({
       url:'/quizzes',

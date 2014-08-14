@@ -8,6 +8,7 @@
 <div class="row">
   <div class="small-9 small-offset-2 columns">
     <p>The End is Nigh</p>
+    <span>f</span>
   </div>
 </div>
 
@@ -18,11 +19,6 @@
   <div class="medium-3 columns">3</div>
 </div>
 
-<% @quizzes.each do |quiz| %>
-  <% first_quiz_question = quiz.questions.first %>
-  <a href="/quizzes/<%= quiz.id %>/questions/<%= first_quiz_question.id %>"><%= quiz.label %></a>
-<% end %>
-
 <!--can you explain how the partials work-->
- <% #render partial: 'home/index_js' %>
+ <%= render partial: 'home/index_js' %>
 
