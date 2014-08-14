@@ -6,8 +6,6 @@
 
 // Zombie
 
-
-
 function MonsterQuiz () {
   this.init();
 }
@@ -19,8 +17,6 @@ MonsterQuiz.prototype = {
   selectedOptions: [],
   init: function (quizzes) {
     var self = this;
-
-    this.getQuizzes();
 
     $('body').on('click', '.quizDiv', function () {
       // self.getQuizQuestions($(this).attr('value'));
@@ -39,7 +35,7 @@ MonsterQuiz.prototype = {
       }
     });
   },
-  getQuizQuestions: function (quizId) {
+  setQuizQuestions: function (quizId, data) {
     var self = this;
     this.quizId = quizId;
     $.ajax({
@@ -131,6 +127,8 @@ Option.prototype = {
     this.option = data.label;
   }
 }
+
+var monsterQuiz = new MonsterQuiz();
 
 // var MonsterQuestion.prototype = {
 //   questionList: null,
