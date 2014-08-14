@@ -60,11 +60,11 @@ MonsterQuiz.prototype = {
   },
   showQuestion: function () {
     var q = this.questionList[this.questionSelected];
-    console.log(q);
+    console.log(q.options);
     // something to clear out last question.
     $('body').append('<div>'+q.question+'</div>');
     for(var i in q.options) {
-      $('body').append('<div>'+q.options[i].option+'</div>');
+      $('.radioGroup').append('<div>'+q.options[i].option+'</div>');
     }
   },
   saveAnswer: function () {

@@ -34,3 +34,39 @@ body{
     bottom: 0;
     left: 0;
 }
+
+.radioGroup{
+label{ position:relative; padding-left:32px; cursor:pointer; transition:0.2s; }
+label:hover{ color:#FFF; }
+label::before, label::after{ content:''; position:absolute; top:50%; margin-top:-11px; left:0; width:22px; height:22px; border-radius:20px; }
+label::before{ box-shadow:0 1px 0 rgba(255,255,255,0.25), 0 2px 5px 6px rgba(0,0,0,0.5) inset; }
+label::after{ background:#79EAC5; opacity:.2; -webkit-transform:scale(0); transform:scale(0); transition:0.3s; }
+label:hover::after{ -webkit-transform:scale(0.6); transform:scale(0.6); opacity:1; transition:0.2s; }
+input:checked + label::after{ -webkit-transform:scale(0.7); transform:scale(0.8); opacity:1; box-shadow:0 0 15px -1px #79EAC5; }
+
+
+/*----------------------------
+  PAGE RESET
+-----------------------------*/
+@font-face {
+  font-family: 'Roboto Condensed';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Roboto Condensed Regular'), local('RobotoCondensed-Regular'), url(http://themes.googleusercontent.com/static/fonts/robotocondensed/v7/Zd2E9abXLFGSr9G3YK2MsFzqCfRpIA3W6ypxnPISCPA.woff) format('woff');
+}
+
+html{ height:100%; }
+body{
+ height:100%; text-align:center; font:1.5em 'Roboto Condensed', arial;
+ background-image: -webkit-radial-gradient(top, circle cover, #3c3b52 0%, #252233 80%);
+ background-image: -moz-radial-gradient(top, circle cover, #3c3b52 0%, #252233 80%);
+ background-image: -o-radial-gradient(top, circle cover, #3c3b52 0%, #252233 80%);
+ background-image: radial-gradient(top, circle cover, #3c3b52 0%, #252233 80%);
+}
+
+*{ margin:0; padding:0; }
+
+fieldset{ display:inline-block; color:rgba(255,255,255,0.6); padding:30px 60px 50px; border:4px solid rgba(0,0,0,0.2); box-shadow:0 1px 0 rgba(255,255,255,0.1), 0 -160px 50px -80px rgba(0,0,0,0.1) inset; border-radius:20px; margin:50px auto; text-shadow:1px 3px 1px rgba(0,0,0,0.3); }
+legend{ padding:0 20px; dislpay:inline-block; color:#79EAC5; text-transform:uppercase; }
+fieldset label{ margin:0 20px; }
+}

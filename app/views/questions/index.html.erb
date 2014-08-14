@@ -1,17 +1,16 @@
-<h1>Questions#index</h1>
-<p>Find me in app/views/questions/index.html.erb</p>
 
 <script type="text/javascript">
 var questions = <%= raw @questions.to_json %>;
 </script>
 <%= render partial: 'questions/index_js' %>
 <fieldset class='radioGroup'>
-  <legend>Cool radio buttons:</legend>
+  <legend>Options:</legend>
   <input id='g1o1' name="group1" value="option1" hidden type="radio">
-  <label for='g1o1'>Hell yeah</label>
+  <label for='g1o1'></label>
   <input id='g1o2' name="group1" value="option2" hidden type="radio">
   <label for='g1o2'>A little</label>
   <input id='g1o3' name="group1" value="option3" hidden type="radio">
   <label for='g1o3'>Nope</label>
 </fieldset>
 <button id="saveContinue">S & C</button>
+
