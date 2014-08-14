@@ -16,8 +16,21 @@ class QuestionsController < ApplicationController
   end
 
   def show
-    @quiz_question = Quiz.find(params[:quiz_id]).questions.find(params[:id])
-    render json: @quiz_question
+    quiz = Quiz.find(params[:quiz_id])
+    @quiz_question = quiz.questions.find(params[:id])
+
+    questions_array = quiz.questions.to_ary
+    question_index  = questions_array.index(@quiz_question)
+    @next_question  = questions_array[question_index + 1]
+    # render json: @quiz_question
+  end
+
+  def save_answer
+    if @next_question != nil
+      # redirect_to
+    else
+      # redirect_to results page
+    end
   end
 
   def check_meta

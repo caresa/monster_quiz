@@ -2,3 +2,12 @@
 <p>Find me in app/views/questions/show.html.erb</p>
 
 
+<%= @quiz_question.question %>
+
+<div class="row options">
+<% @quiz_question.options.each do |option| %>
+  <input type="radio"><%= option.label %></input>
+<% end %>
+</div>
+
+<a href="/quizzes/<%= params[:quiz_id] %>/questions/<%= @next_question.id %>">test question!!</a>

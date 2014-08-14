@@ -5,3 +5,13 @@
 var questions = <%= raw @questions.to_json %>;
 </script>
 <%= render partial: 'questions/index_js' %>
+<fieldset class='radioGroup'>
+  <legend>Cool radio buttons:</legend>
+  <input id='g1o1' name="group1" value="option1" hidden type="radio">
+  <label for='g1o1'>Hell yeah</label>
+  <input id='g1o2' name="group1" value="option2" hidden type="radio">
+  <label for='g1o2'>A little</label>
+  <input id='g1o3' name="group1" value="option3" hidden type="radio">
+  <label for='g1o3'>Nope</label>
+</fieldset>
+<button id="saveContinue">S & C</button>

@@ -11,6 +11,7 @@ function MonsterQuiz () {
 }
 MonsterQuiz.prototype = {
   quizList: [],
+  quizId: null,
   quizSelected: null,
   questionSelected: null,
   questionList: [],
@@ -20,8 +21,11 @@ MonsterQuiz.prototype = {
 
     $('body').on('click', '.quizDiv', function () {
       // self.getQuizQuestions($(this).attr('value'));
-      window.location = '/quizzes/' + $(this).attr('value') + '/questions';
+      self.quizId = $(this).attr('value');
+      window.location = '/quizzes/' + self.quizId + '/questions';
     });
+
+    // event for save and contintue that calls saveAnswer
   },
   getQuizzes: function (callback) {
     var self = this;
@@ -35,19 +39,13 @@ MonsterQuiz.prototype = {
       }
     });
   },
-  setQuizQuestions: function (quizId, data) {
+  setQuizQuestions: function (data) {
     var self = this;
-    this.quizId = quizId;
-    $.ajax({
-      //when i make the ajax call shouldn't it go to this view
-      url:'/quizzes/'+quizId+'/questions',
-      success: function(data){
-        for(var i in data) {
-          self.questionList.push(new Question(data[i]));
-        }
-        self.startQuiz();
-      }
-    });
+
+    for(var i in data) {
+      self.questionList.push(new Question(data[i]));
+    }
+    self.startQuiz();
   },
   showQuizList: function () {
     for(var i in this.quizList) {
@@ -62,16 +60,22 @@ MonsterQuiz.prototype = {
   showQuestion: function () {
     var q = this.questionList[this.questionSelected];
     console.log(q);
+    // something to clear out last question.
     $('body').append('<div>'+q.question+'</div>');
     for(var i in q.options) {
       $('body').append('<div>'+q.options[i].option+'</div>');
     }
   },
-  saveSelection: function(){
-
+  saveAnswer: function () {
+    // call this only if an option is selected when button clicked.
+    // this.selectedOptions gets optionId pushed onto it.
+    this.nextQuestion();
   },
   nextQuestion: function () {
     this.questionSelected ++;
+
+    // if this.questionSelected > this.questionList.lenth, quiz is done, move on to scoring.
+    //else
     this.showQuestion();
   }
 };
