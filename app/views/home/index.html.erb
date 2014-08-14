@@ -1,7 +1,16 @@
-<h1>ZombieMe</h1>
+<div class="row">
+<!--why isn't this responsive-->
+  <div class="small-3 columns" id="app-title">
+    <h1>ZombieMe</h1>
+  </div>
+</div>
 
+<div class="row">
+  <div class="small-9 small-offset-2 columns">
+    <p>The End is Nigh</p>
+  </div>
+</div>
 
-<!-- <script type="text/javascript">
-var quizzes = <%= raw @quiz.to_json %>;
-</script>
- -->
+<!--can you explain how the partials work-->
+ <%= render partial: 'home/index_js' %>
+

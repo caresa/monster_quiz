@@ -1,10 +1,13 @@
-$(function() {
+// $(function() {
 
-  var monsterQuiz = new MonsterQuiz();
+//   var monsterQuiz = new MonsterQuiz();
 
-});
+// });
 
 // Zombie
+
+
+
 function MonsterQuiz () {
   this.init();
 }
@@ -20,8 +23,8 @@ MonsterQuiz.prototype = {
     this.getQuizzes();
 
     $('body').on('click', '.quizDiv', function () {
-      self.getQuizQuestions($(this).attr('value'));
-
+      // self.getQuizQuestions($(this).attr('value'));
+      window.location = '/quizzes/' + $(this).attr('value') + '/questions';
     });
   },
   getQuizzes: function (callback) {

@@ -1,4 +1,6 @@
 class QuestionsController < ApplicationController
+  before_action :authenticate_user!
+
   def index
     #access to all the questions for a given quiz
     @questions = Quiz.find(params[:quiz_id]).questions.includes(:options).all
@@ -10,7 +12,7 @@ class QuestionsController < ApplicationController
 
     # @questions = Question.where(id:questionList)
 
-    render json: @questions
+    # render json: @questions
   end
 
   def show

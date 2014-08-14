@@ -1,4 +1,6 @@
 class QuizzesController < ApplicationController
+  before_action :authenticate_user!
+
   def index
     @quiz = Quiz.all
     render json: @quiz
