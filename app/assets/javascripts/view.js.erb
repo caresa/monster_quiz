@@ -6,8 +6,8 @@
 
 // Zombie
 
-function MonsterQuiz () {
-  this.init();
+function MonsterQuiz (quizId) {
+  this.init(quizId);
 }
 MonsterQuiz.prototype = {
   quizList: [],
@@ -16,8 +16,10 @@ MonsterQuiz.prototype = {
   questionSelected: null,
   questionList: [],
   selectedOptions: [],
-  init: function (quizzes) {
+  init: function (quizId) {
     var self = this;
+    this.quizId = quizId;
+
 
     $('body').on('click', '.quizDiv', function () {
       // self.getQuizQuestions($(this).attr('value'));
@@ -25,10 +27,15 @@ MonsterQuiz.prototype = {
       window.location = '/quizzes/' + self.quizId + '/questions';
     });
 
+    $('body').on('click', '#saveContinue', function () {
+
+     //self.nextQuestion = $(this).attr('value');
+      self.saveAnswer();
+    });
+
     // event for save and contintue that calls saveAnswer
   },
   getQuizzes: function (callback) {
-    console.log('a');
     var self = this;
     $.ajax({
       url:'/quizzes',
@@ -46,7 +53,6 @@ MonsterQuiz.prototype = {
     for(var i in data) {
       self.questionList.push(new Question(data[i]));
     }
-    self.startQuiz();
   },
   showQuizList: function () {
     for(var i in this.quizList) {
@@ -55,29 +61,45 @@ MonsterQuiz.prototype = {
   },
   startQuiz: function () {
     this.questionSelected = 0;
-    console.log(this);
     this.showQuestion();
   },
   showQuestion: function () {
     var q = this.questionList[this.questionSelected];
-    console.log(q.options);
-    // something to clear out last question.
-    $('body').append('<div>'+q.question+'</div>');
+    $('.questionText').html(q.question);
+    this.showOptions();
+  },
+  showOptions: function () {
+    var q = this.questionList[this.questionSelected];
+    var radios = '';
     for(var i in q.options) {
-      $('.radioGroup').append('<div>'+q.options[i].option+'</div>');
+      var option = q.options[i];
+      radios = radios+'<p><input id="'+option.id+'" name="group1" value="'+option.id+'" hidden type="radio">'+
+                  '<label for="'+option.id+'">'+option.option+'</label></p>';
     }
+
+    $('.radioGroup').html(radios);
   },
   saveAnswer: function () {
-    // call this only if an option is selected when button clicked.
-    // this.selectedOptions gets optionId pushed onto it.
-    this.nextQuestion();
+    var option = $('input[name="group1"]:checked').val();
+    if(option != undefined){
+      this.selectedOptions.push(option);
+      console.log(this.selectedOptions);
+      this.nextQuestion();
+      }else{
+       alert('a');
+      }
   },
   nextQuestion: function () {
     this.questionSelected ++;
+    if(this.questionSelected < this.questionList.length){
+      this.showQuestion();
 
-    // if this.questionSelected > this.questionList.lenth, quiz is done, move on to scoring.
-    //else
-    this.showQuestion();
+    }else{
+
+      //function call to show score and blurb
+      // showScore();
+      window.location = '/quizzes/' + this.quizId + '/results';
+    }
   }
 };
 
@@ -133,7 +155,8 @@ Option.prototype = {
   }
 }
 
-var monsterQuiz = new MonsterQuiz();
+var quizId = 1;
+var monsterQuiz = new MonsterQuiz(quizId);
 
 // var MonsterQuestion.prototype = {
 //   questionList: null,

@@ -5,15 +5,15 @@ Rails.application.routes.draw do
 
   get 'options/show'
 
-  resources :quizzes
-
-  resources :questions
-
   resources :results
-
 
   resources :quizzes do
      resources :questions
+     get 'results', :on => :member
+     # /quizzes/1/results
+
+     # get 'results', :on => :collection
+     # /quizzes/results
   end
 
   resources :questions do
