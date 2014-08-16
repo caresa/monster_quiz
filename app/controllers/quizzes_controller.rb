@@ -17,7 +17,8 @@ class QuizzesController < ApplicationController
   end
 
   def results
-    options = ["3", "6", "9", "12", "15", "18", "21", "24", "27", "30"]
+    options = params["options"].split(",")
+    #["3", "6", "9", "12", "15", "18", "21", "24", "27", "30"]
     quiz = Quiz.find(params[:id])
     @quiz_options = OptionsMeta.where(options_id:[options]).reorder(:score).reverse
     results = { :test => "hi" }

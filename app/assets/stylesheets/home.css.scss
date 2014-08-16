@@ -2,7 +2,8 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 body{
-  // background-image: url('redzombie.jpg');
+  background-image: url('xzombie_man.jpg');
+  // background-repeat: no-repeat;
 
 }
 
@@ -12,6 +13,10 @@ body{
 
 #app-title h1{
   font-size: 8em;
+}
+
+.the-end p{
+    font-size: 2em;
 }
 
 .navbar-text.pull-right{

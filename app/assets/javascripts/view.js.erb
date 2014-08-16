@@ -98,7 +98,7 @@ MonsterQuiz.prototype = {
 
       //function call to show score and blurb
       // showScore();
-      window.location = '/quizzes/' + this.quizId + '/results';
+      window.location = '/quizzes/' + this.quizId + '/results?options='+this.selectedOptions;
     }
   }
 };
