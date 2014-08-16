@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'zombies/index'
+
+  get 'zombies/show'
+
   devise_for :users
 
   get 'options/index'
