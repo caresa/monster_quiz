@@ -1,0 +1,9 @@
+<script type="text/javascript">
+  var results = <%= raw @quiz_meta.to_json %>;
+  var selectedQuiz = <%= raw @selectedQuiz.to_json %>;
+</script>
+
+<ul class='results'>
+</ul>
+
+<%= render partial: 'quizzes/results_js' %>

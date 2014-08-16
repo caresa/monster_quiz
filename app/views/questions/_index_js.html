@@ -1,8 +1,11 @@
 <script>
-//is questions used because that is the service call name?
+  //is questions used because that is the service call name?
+  console.log('q');
 
-monsterQuiz.setQuizQuestions(questions);
-monsterQuiz.startQuiz();
+  console.log(selectedQuiz);
+  var monsterQuiz = new MonsterQuiz(selectedQuiz.id);
 
+  monsterQuiz.setQuizQuestions(questions);
+  monsterQuiz.startQuiz();
 
 </script>

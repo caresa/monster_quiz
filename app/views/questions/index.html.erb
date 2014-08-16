@@ -1,6 +1,8 @@
 
 <script type="text/javascript">
+var selectedQuiz = <%= raw @selectedQuiz.to_json %>;
 var questions = <%= raw @questions.to_json %>;
+var quiz_questions = <%= raw @quiz_questions.to_json %>;
 </script>
 <div class="questionText"></div>
 <fieldset class='radioGroup'>

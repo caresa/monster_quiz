@@ -3,6 +3,7 @@ class QuestionsController < ApplicationController
 
   def index
     #access to all the questions for a given quiz
+    @selectedQuiz = Quiz.find(params[:quiz_id])
     @questions = Quiz.find(params[:quiz_id]).questions.includes(:options).all
     # questionList = []
 

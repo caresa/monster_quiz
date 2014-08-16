@@ -1,11 +1,3 @@
-// $(function() {
-
-//   var monsterQuiz = new MonsterQuiz();
-
-// });
-
-// Zombie
-
 function MonsterQuiz (quizId) {
   this.init(quizId);
 }
@@ -16,6 +8,8 @@ MonsterQuiz.prototype = {
   questionSelected: null,
   questionList: [],
   selectedOptions: [],
+  compiledResults: {},
+  sortedResults: [],
   init: function (quizId) {
     var self = this;
     this.quizId = quizId;
@@ -100,6 +94,37 @@ MonsterQuiz.prototype = {
       // showScore();
       window.location = '/quizzes/' + this.quizId + '/results?options='+this.selectedOptions;
     }
+  },
+  compileResults: function (results) {
+    var r;
+
+    for(var i in results) {
+      r = results[i];
+
+      if(this.compiledResults[r.z_type] == undefined) {
+        this.compiledResults[r.z_type] = 0;
+      }
+      this.compiledResults[r.z_type] += r.score;
+    }
+
+    for(i in this.compiledResults) {
+      r = this.compiledResults[i];
+      this.sortedResults.push({'name': i, 'value': r});
+    }
+    this.sortedResults.sort(function(a, b) {
+      if (a.value < b.value) {
+        return 1;
+      }
+      if (a.value > b.value) {
+        return -1;
+      }
+      return 0;
+    });
+  },
+  showResults: function () {
+    for(var i in this.sortedResults) {
+      $('ul.results').append('<li id=:res1">'+this.sortedResults[i].value+': '+this.sortedResults[i].name+'</li>');
+    }
   }
 };
 
@@ -154,9 +179,6 @@ Option.prototype = {
     this.option = data.label;
   }
 }
-
-var quizId = 1;
-var monsterQuiz = new MonsterQuiz(quizId);
 
 // var MonsterQuestion.prototype = {
 //   questionList: null,

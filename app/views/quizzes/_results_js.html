@@ -1,0 +1,11 @@
+<script>
+$(function() {
+  console.log(results);
+
+  var monsterQuiz = new MonsterQuiz(selectedQuiz.id);
+  monsterQuiz.compileResults(results);
+  monsterQuiz.showResults();
+  console.log(monsterQuiz.sortedResults);
+
+});
+</script>
