@@ -8,4 +8,28 @@
   monsterQuiz.setQuizQuestions(questions);
   monsterQuiz.startQuiz();
 
+  $(function() {
+
+    $('#timer').imageTimer({
+      finish: function () {
+        $('#zImg .start').css('display', 'none');
+        $('#zImg .animate').css('display', 'block');
+
+        setTimeout(function () {
+          $('#zImg .animate').css('display', 'none');
+          $('#zImg .end').css('display', 'block');
+        }, 4000);
+      },
+      seconds: 60,
+      update: 15000,
+      updates: [
+        'You should hurry....',
+        'Are you taking this seriously?',
+        'Did I mention this is a matter of life and death?',
+        'You were too slow. Go ahead and finish. Take your time. Not like there is a zombie apacalypse to worry about.'
+      ],
+    });
+
+  });
+
 </script>

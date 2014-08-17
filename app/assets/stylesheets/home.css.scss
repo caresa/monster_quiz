@@ -58,13 +58,15 @@ body{
 
 }
 
-.bcg1, .bcg2, .bcg3{
+.bcg1, .bcg2, .bcg3, .bcg4, .bcg5, .bcg6, .bcg7, .bcg8, .bcg9{
   height: 9em;
-  border: 1px solid black;
+  // border: 1px solid black;
 }
 
-.bcg1{
-  background-image:('romero_1.jpg')
+.romero{
+  background-image: url('romero_1.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 .the-end p{
