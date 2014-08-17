@@ -1,6 +1,24 @@
 // Place all the styles related to the quizzes controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-*{
-  /*background-color: blue;*/
+
+.res1, .res2, .res3{
+border: 1px solid black;
+height: 15em;
+}
+
+.res1{
+  background-image: url('test_1.jpg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: #fffef1;
+}
+
+.res2{
+  background-image: url('test_2.jpg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: #ffffff;
 }

@@ -4,10 +4,15 @@ var selectedQuiz = <%= raw @selectedQuiz.to_json %>;
 var questions = <%= raw @questions.to_json %>;
 var quiz_questions = <%= raw @quiz_questions.to_json %>;
 </script>
-<div class="questionText"></div>
-<fieldset class='radioGroup'>
-</fieldset>
-<button id="saveContinue">S & C</button>
+<div class="row">
+  <div class="small-6 large-centered columns">
+    <div class="questionText"></div>
+    <fieldset class='radioGroup'>
+    </fieldset>
+    <button id="saveContinue">S & C</button>
+  </div>
+</div>
+
 <%= render partial: 'questions/index_js' %>
 
 

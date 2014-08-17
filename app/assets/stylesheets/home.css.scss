@@ -1,14 +1,50 @@
 // Place all the styles related to the home controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+@font-face {
+      font-family: "font_3";
+      src:font-url('/assets/font_2.otf') format("truetype");
+      font-weight: normal;
+      font-style: normal;
+  }
+
+.alert-success{
+  display: none;
+}
+
+input:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0px 1000px white inset;
+}
+
+#user_email, #user_password, #user_password_confirmation{
+    background-color:transparent;
+    border: 0px solid;
+    box-shadow: none;
+    border-bottom: 1px solid #ccc;
+  }
+
 body{
+  font-family: 'font_3';
+}
+
+.begin {
+  text-align: center;
+}
+
+.sign-up h2, .sign-in h2{
+  color: #5f031a;
+  // font-family: "font_2";
 
 }
 
 .homeContainer {
+  height: 95%;
+  width: 100%;
+  max-width: 1920px;
   background-image: url('xzombie_man.jpg');
   background-color: #f4f4f4;
   background-repeat: no-repeat;
+  background-position: right top;
 }
 
 #app-title{
@@ -17,6 +53,7 @@ body{
 
 #app-title h1{
   font-size: 8em;
+
 }
 
 .the-end p{

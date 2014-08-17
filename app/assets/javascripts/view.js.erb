@@ -10,6 +10,9 @@ MonsterQuiz.prototype = {
   selectedOptions: [],
   compiledResults: {},
   sortedResults: [],
+  zombieTypes: [],
+  zombieLabels: [],
+  zombieData: [],
   init: function (quizId) {
     var self = this;
     this.quizId = quizId;
@@ -50,7 +53,7 @@ MonsterQuiz.prototype = {
   },
   showQuizList: function () {
     for(var i in this.quizList) {
-     $('body').append('<div class="quizDiv" value="'+this.quizList[i].id+'">'+this.quizList[i].label+'</div>');
+     $('.qList').append('<div class="quizDiv" value="'+this.quizList[i].id+'">'+this.quizList[i].label+'</div>');
     }
   },
   startQuiz: function () {
@@ -95,16 +98,31 @@ MonsterQuiz.prototype = {
       window.location = '/quizzes/' + this.quizId + '/results?options='+this.selectedOptions;
     }
   },
+  setTypes: function (types) {
+    this.zombieTypes = types;
+  },
   compileResults: function (results) {
     var r;
 
     for(var i in results) {
       r = results[i];
+      this.zombieLabels.push(r.z_type);
 
       if(this.compiledResults[r.z_type] == undefined) {
         this.compiledResults[r.z_type] = 0;
       }
       this.compiledResults[r.z_type] += r.score;
+    }
+
+    for(var i in this.zombieTypes) {
+      r = this.zombieTypes[i];
+
+      if(this.compiledResults[r] == undefined) {
+        this.zombieData.push(0);
+      }
+      else {
+        this.zombieData.push(this.compiledResults[r]);
+      }
     }
 
     for(i in this.compiledResults) {

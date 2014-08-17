@@ -2,10 +2,37 @@
 $(function() {
   console.log(results);
 
+  var types = ["Pathogenic", "Slow", "Fit", "Government Issue", "Hipster"];
+
   var monsterQuiz = new MonsterQuiz(selectedQuiz.id);
+  monsterQuiz.setTypes(types);
   monsterQuiz.compileResults(results);
   monsterQuiz.showResults();
   console.log(monsterQuiz.sortedResults);
+
+  console.log(monsterQuiz.zombieLabels, monsterQuiz.zombieData);
+
+  var radarChartData = {
+    labels: monsterQuiz.zombieTypes,
+    datasets: [
+      {
+        label: "My Zombie Types",
+        fillColor: "rgba(220,220,220,0.8)",
+        strokeColor: "rgba(116,14,24,1)",
+        pointColor: "rgba(0,0,0,1)",
+        pointStrokeColor: "#fff",
+        pointHighlightFill: "#fff",
+        pointHighlightStroke: "rgba(220,220,220,1)",
+        data: monsterQuiz.zombieData
+      }
+    ]
+  };
+
+window.onload = function(){
+  window.myRadar = new Chart(document.getElementById("canvas").getContext("2d")).Radar(radarChartData, {
+    responsive: true
+  });
+}
 
 });
 </script>
