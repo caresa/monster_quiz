@@ -1,7 +1,12 @@
 // Place all the styles related to the questions controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-
+@font-face {
+      font-family: "city_burn";
+      src:font-url('/assets/city_burn.ttf') format("truetype");
+      font-weight: normal;
+      font-style: normal;
+  }
 
 .timerHolder {
   border: 1px solid #999;
@@ -19,3 +24,39 @@
   margin-left: auto;
   margin-right: auto;
 }
+
+.questionText{
+  margin-top: 4px;
+  font-family: "city_burn";
+  font-size: 1.5em;
+  color: #006600;
+}
+
+fieldset.radioGroup{
+  margin-top: -40px;
+}
+
+.radioGroup{
+  height: 20em;
+  border: none;
+}
+
+  .radioGroup p{
+    margin-top: 2em;
+    font-family: 'city_burn';
+  }
+
+    .radioGroup p label{
+      font-size: 1.5em;
+      color: black;
+    }
+
+#button{
+  text-align: center;
+  margin-top: 45px;
+}
+
+#saveContinue{
+  background: black;
+}
+

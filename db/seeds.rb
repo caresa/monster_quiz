@@ -81,7 +81,7 @@ Quiz.create([
 Option.create([
   {
     question_id: 1,
-    label: "Most of my food purchase involve a speakerpost, my car, and a greasy paper bag."
+    label: "Most of my food purchases involve a speakerpost, my car, and a greasy paper bag."
   },
   {
     question_id: 1,
@@ -129,7 +129,7 @@ Option.create([
   },
   {
     question_id: 5,
-    label: "I go to the Medical Doctor every week. He always has samples..."
+    label: "I go to the Medical Doctor every week. They always have samples..."
   },
   {
     question_id: 5,
