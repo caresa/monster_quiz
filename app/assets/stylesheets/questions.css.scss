@@ -51,6 +51,14 @@ fieldset.radioGroup{
       color: black;
     }
 
+      .radioGroup p label::after{
+        background: #800000;
+      }
+
+      .radioGroup label:hover{
+        color: #800000;
+      }
+
 #button{
   text-align: center;
   margin-top: 45px;
