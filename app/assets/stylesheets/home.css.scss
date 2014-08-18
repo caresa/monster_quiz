@@ -1,6 +1,11 @@
 // Place all the styles related to the home controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.rowRight {
+  text-align: right;
+}
+
 @font-face {
       font-family: "shock_shimmy";
       src:font-url('/assets/shock_shimmy.ttf') format("truetype");
@@ -22,7 +27,7 @@ input:-webkit-autofill {
     box-shadow: none;
     border-bottom: 1px solid #ccc;
     font-size: 1em;
-    font-family: 'shock_shimmy'
+    // font-family: 'shock_shimmy'
   }
 
 body{
@@ -35,7 +40,7 @@ body{
 
 .sign-up h2, .sign-in h2{
   color: #5f031a;
-  font-family: "shock_shimmy";
+  // font-family: "shock_shimmy";
 
 }
 
@@ -63,11 +68,38 @@ body{
   // border: 1px solid black;
 }
 
-.romero{
-  background-image: url('romero_1.jpg');
+.bcg1{
+  background-image: url('comic_1.jpg');
   background-position: center;
   background-repeat: no-repeat;
+  background-size: cover;
 }
+
+.bcg3{
+  background-image: url('zombie_4.jpeg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.bcg5{
+  background-image: url('zombie_5.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.bcg7{
+  background-image: url('zombie_6.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+// .romero{
+//   background-image: url('romero_1.jpg');
+//   background-position: center;
+//   background-repeat: no-repeat;
+// }
 
 .the-end p{
     font-size: 2em;

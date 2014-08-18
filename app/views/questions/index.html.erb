@@ -9,10 +9,14 @@ var quiz_questions = <%= raw @quiz_questions.to_json %>;
   <div id="timer"></div>
   <div id="timerMsg"></div>
 </div>
-<div id="zImg">
-  <img class="animate" src="ripper.gif" style="display: none;" />
-  <img class="start" src="ripperStart.png" />
-  <img class="end" src="ripperEnd.gif" style="display: none;" />
+<div class='row'>
+  <div class='small-4 large-centered columns'>
+    <div id="zImg">
+      <img class="animate" src="/assets/ripper.gif" style="display: none;" />
+      <img class="start" src="/assets/ripperStart.png" />
+      <img class="end" src="/assets/ripperEnd.gif" style="display: none;" />
+    </div>
+  </div>
 </div>
 
 <div class="row">
