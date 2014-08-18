@@ -31,7 +31,7 @@ input:-webkit-autofill {
   }
 
 body{
-  font-family: 'shock_shimmy';
+  // font-family: 'shock_shimmy';
 }
 
 .begin {
@@ -54,11 +54,11 @@ body{
 }
 
 #app-title{
-    height: 160px;
+
 }
 
 #app-title h1{
-  font-size: 8em;
+  font-size: 3em;
   font-family: "shock_shimmy";
 
 }
@@ -95,6 +95,13 @@ body{
   background-repeat: no-repeat;
   background-size: cover;
 }
+
+.bcg9{
+  background-image: url('zombie_7.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
 // .romero{
 //   background-image: url('romero_1.jpg');
 //   background-position: center;
@@ -103,6 +110,8 @@ body{
 
 .the-end p{
     font-size: 2em;
+    text-align: center;
+    font-family: "shock_shimmy";
 }
 
 .navbar-text.pull-right{

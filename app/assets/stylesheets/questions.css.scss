@@ -2,3 +2,20 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+
+.timerHolder {
+  border: 1px solid #999;
+  width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+}
+
+#timer {
+}
+
+#timerMsg {
+  width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}

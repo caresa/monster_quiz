@@ -14,13 +14,18 @@
       finish: function () {
         $('#zImg .start').css('display', 'none');
         $('#zImg .animate').css('display', 'block');
+        var image = new Image();
+        image.src = '/assets/ripper.gif'
+        $('#zImg .animate').attr('src',image.src);
 
         setTimeout(function () {
-          $('#zImg .animate').css('display', 'none');
+          //$('#zImg .animate').css('display', 'none');
+          $('#zImg .animate').attr('src','');
           $('#zImg .end').css('display', 'block');
-        }, 4000);
+        }, 3800);
       },
       seconds: 60,
+      updateTarget: '#timerMsg',
       update: 15000,
       updates: [
         'You should hurry....',

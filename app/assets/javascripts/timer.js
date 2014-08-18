@@ -12,6 +12,7 @@
       finish: function () {
         console.log('done');
       },
+      updateTarget: false,
       update: false,
       updates: ['Go']
     }, params);
@@ -23,10 +24,9 @@
       $(this).css(options.style);
 
       if(options.update !== false) {console.log(options.update);
-        $(this).append('<div id="timerMsg" style="position: absolute;top: 20px;left: 0px;"></div>');
         var t = setInterval(function () {
           var msg = options.updates.shift();
-          $('#timerMsg').html(msg);
+          $(options.updateTarget).html(msg);
         }, options.update);
       }
 

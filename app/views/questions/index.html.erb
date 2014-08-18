@@ -4,15 +4,16 @@ var selectedQuiz = <%= raw @selectedQuiz.to_json %>;
 var questions = <%= raw @questions.to_json %>;
 var quiz_questions = <%= raw @quiz_questions.to_json %>;
 </script>
-
-<div style="border: 1px solid #999;width: 800px;">
-  <div id="timer"></div>
-  <div id="timerMsg"></div>
+<div class="row">
+  <div id="timerMsg">&nbsp;</div>
+  <div class="timerHolder">
+    <div id="timer"></div>
+  </div>
 </div>
 <div class='row'>
   <div class='small-4 large-centered columns'>
     <div id="zImg">
-      <img class="animate" src="/assets/ripper.gif" style="display: none;" />
+      <img class="animate" src="" style="display: none;" />
       <img class="start" src="/assets/ripperStart.png" />
       <img class="end" src="/assets/ripperEnd.gif" style="display: none;" />
     </div>
