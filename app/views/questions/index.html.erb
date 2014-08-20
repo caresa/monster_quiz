@@ -14,8 +14,8 @@ var quiz_questions = <%= raw @quiz_questions.to_json %>;
   <div class='small-4 large-centered columns'>
     <div id="zImg">
       <img class="animate" src="" style="display: none;" />
-      <img class="start" src="/assets/ripperStart.png" />
-      <img class="end" src="/assets/ripperEnd.gif" style="display: none;" />
+      <img class="start" src="<%= image_path 'ripperStart.png' %>" />
+      <img class="end" src="<%= image_path 'ripperEnd.gif' %>" style="display: none;" />
     </div>
   </div>
 </div>
