@@ -13,7 +13,7 @@ var quiz_questions = <%= raw @quiz_questions.to_json %>;
 <div class='row'>
   <div class='small-4 large-centered columns'>
     <div id="zImg">
-      <img class="animate" src="" style="display: none;" />
+      <img class="animate" src="<%= image_path 'ripper.gif' %>" style="display: none;" />
       <img class="start" src="<%= image_path 'ripperStart.png' %>" />
       <img class="end" src="<%= image_path 'ripperEnd.gif' %>" style="display: none;" />
     </div>
