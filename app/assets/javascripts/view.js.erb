@@ -78,7 +78,7 @@ MonsterQuiz.prototype = {
   },
   saveAnswer: function () {
     var option = $('input[name="group1"]:checked').val();
-    if(potion != undefined){
+    if(option != undefined){
       this.setOption(option);
       console.log(this.selectedOptions);
       this.nextQuestion();

@@ -30,6 +30,24 @@ input:-webkit-autofill {
     -webkit-box-shadow: 0 0 0px 1000px white inset;
 }
 
+.navbar-text{
+  font-family: "city_burn";
+  font-size: 1em;
+  color: black;
+}
+
+h3{
+  font-family: "city_burn";
+  font-size: 2em;
+  color: black;
+}
+
+p{
+  font-family: "city_burn";
+  font-size: 1em;
+  color: black;
+}
+
 #user_email, #user_password, #user_password_confirmation{
     background-color:transparent;
     border: 0px solid;
@@ -45,8 +63,24 @@ label{
   color: black;
 }
 
+a{
+  font-family: "city_burn";
+  font-size: 1.5em;
+  color: black;
+}
+
+  a:hover{
+    color: #640618;
+  }
+
 .begin {
   text-align: center;
+}
+
+h2{
+  color: #5f031a;
+  font-family: "shock_shimmy";
+  font-size: 3em;
 }
 
 .sign-up h2, .sign-in h2{
@@ -67,16 +101,29 @@ label{
 
 .button{
   background-color: black;
-  color: white;
+  color: #f3ea2b;
+  font-size: 18px;
+  font-family: "city_burn";
+  letter-spacing: 5px;
+  border-radius: 3px;
 }
   .button:hover{
     background-color: #640618;
+    color: #f3ea2b;
   }
 
 #app-title h1{
   font-size: 3em;
   font-family: "shock_shimmy";
 }
+
+.quizDiv{
+  cursor: pointer;
+}
+
+  .quizDiv:hover{
+    color: #640618;
+  }
 
 .bcg1, .bcg2, .bcg3, .bcg4, .bcg5, .bcg6, .bcg7, .bcg8, .bcg9{
   height: 9em;
@@ -150,11 +197,7 @@ label{
   background-size: cover;
   border: 3px solid black;
 }
-// .romero{
-//   background-image: url('romero_1.jpg');
-//   background-position: center;
-//   background-repeat: no-repeat;
-// }
+
 
 .the-end p{
     font-size: 2em;
@@ -168,21 +211,8 @@ label{
   // color: white;
 }
 
-.circle {
-    width: 80%;
-    height:80%;
-    padding-bottom: 100%;
-    -moz-border-radius: 50%;
-    -webkit-border-radius: 50%;
-    border-radius: 50%;
-    background-image: url('redzombie.jpg');
-    background-position: center;
-    position: absolute;
-    margin: auto;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
+.reset{
+  text-align: center;
 }
 
 .radioGroup{

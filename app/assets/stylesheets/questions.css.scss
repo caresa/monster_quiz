@@ -27,6 +27,9 @@ body{
   width: 800px;
   margin-left: auto;
   margin-right: auto;
+  font-family: 'city_burn';
+  letter-spacing: 5px;
+
 }
 
 .questionText{
@@ -70,6 +73,11 @@ fieldset.radioGroup{
 
 #saveContinue{
   background: black;
+  font-family: 'city_burn';
+  color: #f3ea2b;
+  font-size: 1em;
+  letter-spacing: 5px;
+  border-radius: 3px;
 }
 
   #saveContinue:hover{

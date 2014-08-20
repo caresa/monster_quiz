@@ -276,7 +276,7 @@ OptionsMeta.create([
   },
   {
     options_id: 3,
-    z_type: "Fit",
+    z_type: "Strong",
     score: 5
   },
   {
@@ -291,7 +291,7 @@ OptionsMeta.create([
   },
   {
     options_id: 6,
-    z_type: "Fit",
+    z_type: "Strong",
     score: 8
   },
   {
@@ -306,7 +306,7 @@ OptionsMeta.create([
   },
   {
     options_id: 7,
-    z_type: "Fit",
+    z_type: "Strong",
     score: 6
   },
   {
@@ -326,7 +326,7 @@ OptionsMeta.create([
   },
   {
     options_id: 10,
-    z_type: "Fit",
+    z_type: "Strong",
     score: 3
   },
   {
@@ -361,12 +361,12 @@ OptionsMeta.create([
   },
   {
     options_id: 13,
-    z_type: "Fit",
+    z_type: "Strong",
     score: 6
   },
   {
     options_id: 14,
-    z_type: "Fit",
+    z_type: "Strong",
     score: 4
   },
   {
@@ -381,7 +381,7 @@ OptionsMeta.create([
   },
   {
     options_id: 15,
-    z_type: "Fit",
+    z_type: "Strong",
     score: 4
   },
   {
@@ -401,7 +401,7 @@ OptionsMeta.create([
   },
   {
     options_id: 17,
-    z_type: "Fit",
+    z_type: "Strong",
     score: 5
   },
   {
@@ -426,7 +426,7 @@ OptionsMeta.create([
   },
   {
     options_id: 20,
-    z_type: "Fit",
+    z_type: "Strong",
     score: 1
   },
   {
@@ -436,12 +436,12 @@ OptionsMeta.create([
   },
   {
     options_id: 21,
-    z_type: "Fit",
+    z_type: "Strong",
     score: 3
   },
   {
     options_id: 22,
-    z_type: "Fit",
+    z_type: "Strong",
     score: 1
   },
   {
@@ -476,7 +476,7 @@ OptionsMeta.create([
   },
   {
     options_id: 26,
-    z_type: "Fit",
+    z_type: "Strong",
     score: 2
   },
   {
@@ -496,7 +496,7 @@ OptionsMeta.create([
   },
   {
     options_id: 29,
-    z_type: "Fit",
+    z_type: "Strong",
     score: 1
   },
   {

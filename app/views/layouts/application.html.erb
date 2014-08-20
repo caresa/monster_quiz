@@ -3,20 +3,20 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
     <title><%= content_for?(:title) ? yield(:title) : "ZombiMe" %></title>
 
     <%= stylesheet_link_tag    "application" %>
     <%= javascript_include_tag "vendor/modernizr" %>
     <%= csrf_meta_tags %>
+    <link rel="icon" href="/favicon.ico"/>
   </head>
 
   <body>
    <div class='row title'>
-    <div id="app-title" class='small-6 columns'>
+    <div id="app-title" class='small-4 columns'>
        <h1>ZombieMe</h1>
     </div>
-    <div class='small-6 columns rowRight'>
+    <div class='small-7 columns rowRight'>
       <p class="navbar-text pull-right">
       <% if user_signed_in? %>
         Logged in as <strong><%= current_user.email %></strong>.

@@ -1,12 +1,25 @@
-<h2>Forgot your password?</h2>
+<div class="row">
+  <div class="small-6 small-centered columns">
+    <h2>Forgot your password?</h2>
+  </div>
+</div>
 
 <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
   <%= devise_error_messages! %>
 
-  <div><%= f.label :email %><br />
-  <%= f.email_field :email, autofocus: true %></div>
+  <div class="row">
+    <div class="small-6 small-centered columns">
+      <div><%= f.label :email %><br />
+      <%= f.email_field :email, autofocus: true %></div>
+    </div>
+  </div>
 
-  <div><button class='button'>Send me reset pasword instructions</button></div>
+  <div class="row reset">
+    <div class="small-6 small-centered columns">
+      <div><button class='button'>reset pasword</button></div>
+    </div>
+  </div>
+
 <% end %>
 
 <%= render "devise/shared/links" %>
