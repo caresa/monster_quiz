@@ -8,6 +8,10 @@
       font-style: normal;
   }
 
+body{
+  // background: url('zombie.jpg')
+}
+
 .timerHolder {
   border: 1px solid #999;
   width: 800px;
@@ -67,4 +71,8 @@ fieldset.radioGroup{
 #saveContinue{
   background: black;
 }
+
+  #saveContinue:hover{
+    background-color: #640618;
+  }
 

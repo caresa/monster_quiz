@@ -53,7 +53,7 @@ MonsterQuiz.prototype = {
   },
   showQuizList: function () {
     for(var i in this.quizList) {
-     $('.qList').append('<div class="quizDiv" value="'+this.quizList[i].id+'">'+this.quizList[i].label+'</div>');
+     $('.bcg2').append('<p class="quizDiv" value="'+this.quizList[i].id+'">'+this.quizList[i].label+'</p>');
     }
   },
   startQuiz: function () {
@@ -78,13 +78,16 @@ MonsterQuiz.prototype = {
   },
   saveAnswer: function () {
     var option = $('input[name="group1"]:checked').val();
-    if(option != undefined){
-      this.selectedOptions.push(option);
+    if(potion != undefined){
+      this.setOption(option);
       console.log(this.selectedOptions);
       this.nextQuestion();
       }else{
        alert('a');
       }
+  },
+  setOption: function (option) {
+    this.selectedOptions.push(option);
   },
   nextQuestion: function () {
     this.questionSelected ++;

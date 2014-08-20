@@ -2,6 +2,8 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+
+
 .rowRight {
   text-align: right;
 }
@@ -9,6 +11,13 @@
 @font-face {
       font-family: "shock_shimmy";
       src:font-url('/assets/shock_shimmy.ttf') format("truetype");
+      font-weight: normal;
+      font-style: normal;
+  }
+
+@font-face {
+      font-family: "city_burn";
+      src:font-url('/assets/city_burn.ttf') format("truetype");
       font-weight: normal;
       font-style: normal;
   }
@@ -25,13 +34,15 @@ input:-webkit-autofill {
     background-color:transparent;
     border: 0px solid;
     box-shadow: none;
-    border-bottom: 1px solid #ccc;
+    border-bottom: 1px solid black;
     font-size: 1em;
     // font-family: 'shock_shimmy'
   }
 
-body{
-  // font-family: 'shock_shimmy';
+label{
+  font-family: "city_burn";
+  font-size: 1.5em;
+  color: black;
 }
 
 .begin {
@@ -40,32 +51,35 @@ body{
 
 .sign-up h2, .sign-in h2{
   color: #5f031a;
-  // font-family: "shock_shimmy";
-
+  font-family: "shock_shimmy";
+  font-size: 3em;
 }
 
 .homeContainer {
   height: 95%;
   width: 100%;
   max-width: 1920px;
-  background-color: #f4f4f4;
+  background-color: #494949;
   background-repeat: no-repeat;
   background-position: right top;
+  border-top: 3px solid black
 }
 
-#app-title{
-
+.button{
+  background-color: black;
+  color: white;
 }
+  .button:hover{
+    background-color: #640618;
+  }
 
 #app-title h1{
   font-size: 3em;
   font-family: "shock_shimmy";
-
 }
 
 .bcg1, .bcg2, .bcg3, .bcg4, .bcg5, .bcg6, .bcg7, .bcg8, .bcg9{
   height: 9em;
-  // border: 1px solid black;
 }
 
 .bcg1{
@@ -73,13 +87,33 @@ body{
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  border: 3px solid black;
 }
+
+.bcg2{
+  text-align: center;
+  background-color: #f3ea2b;
+  font-family: "city_burn";
+  border-top: 3px solid black;
+
+}
+
+  .bcg2 p{
+    line-height: 140px;
+    font-size: 3em;
+  }
 
 .bcg3{
   background-image: url('zombie_4.jpeg');
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  border: 3px solid black;
+}
+
+.bcg4{
+  background-color: #f3ea2b;
+  border-left: 3px solid black;
 }
 
 .bcg5{
@@ -87,6 +121,12 @@ body{
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  border: 3px solid black;
+}
+
+.bcg6{
+  background-color: #f3ea2b;
+  border-right: 3px solid black;
 }
 
 .bcg7{
@@ -94,6 +134,13 @@ body{
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  border: 3px solid black;
+}
+
+.bcg8{
+  background-color: #f3ea2b;
+  border-bottom: 3px solid black;
+
 }
 
 .bcg9{
@@ -101,6 +148,7 @@ body{
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  border: 3px solid black;
 }
 // .romero{
 //   background-image: url('romero_1.jpg');
@@ -112,6 +160,8 @@ body{
     font-size: 2em;
     text-align: center;
     font-family: "shock_shimmy";
+    font-size: 6em;
+    color: #f3ea2b;
 }
 
 .navbar-text.pull-right{

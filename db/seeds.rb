@@ -198,6 +198,10 @@ Option.create([
   {
     question_id: 10,
     label: "I drink locally brewed craft beer only."
+  },
+  {
+    question_id: 0,
+    label: "slow bonus"
   }
   ])
 
@@ -499,6 +503,11 @@ OptionsMeta.create([
     options_id: 30,
     z_type: "Hipster",
     score: 3
+  },
+  {
+    options_id: 31,
+    z_type: "Slow",
+    score: 5
   }
   ])
 
