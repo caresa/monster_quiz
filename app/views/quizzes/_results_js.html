@@ -8,9 +8,13 @@ $(function() {
   monsterQuiz.setTypes(types);
   monsterQuiz.compileResults(results);
   monsterQuiz.showResults();
-  console.log(monsterQuiz.sortedResults);
 
   console.log(monsterQuiz.zombieLabels, monsterQuiz.zombieData);
+
+  var mainAttribute = monsterQuiz.sortedResults.shift();
+  console.log(mainAttribute);
+
+  $('#mainType').html(mainAttribute.name);
 
   var radarChartData = {
     labels: monsterQuiz.zombieTypes,
