@@ -15,7 +15,7 @@
         $('#zImg .start').css('display', 'none');
         $('#zImg .animate').css('display', 'block');
         var image = new Image();
-        image.src = 'ripper.gif'
+        image.src = "<%= image_path 'ripper.gif' %>"
         $('#zImg .animate').attr('src',image.src);
         monsterQuiz.setOption(31);
 
